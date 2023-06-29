@@ -11,13 +11,12 @@ const scenes = [
         note: {
           label: "Annotation 1",
           title: "Title 1",
-          align: "middle",
-          wrap: 200
+          align: "middle"
         },
-        x: 100,
-        y: 100,
-        dx: -50,
-        dy: -50
+        x: 50,
+        y: 50,
+        dx: 100,
+        dy: 100
       }
     ]
   },
@@ -29,13 +28,12 @@ const scenes = [
         note: {
           label: "Annotation 2",
           title: "Title 2",
-          align: "middle",
-          wrap: 200
+          align: "middle"
         },
         x: 200,
         y: 200,
-        dx: -50,
-        dy: -50
+        dx: 50,
+        dy: 50
       }
     ]
   },
@@ -47,13 +45,12 @@ const scenes = [
         note: {
           label: "Annotation 3",
           title: "Title 3",
-          align: "middle",
-          wrap: 200
+          align: "middle"
         },
-        x: 250,
-        y: 250,
-        dx: -50,
-        dy: -50
+        x: 200,
+        y: 200,
+        dx: 50,
+        dy: 50
       }
     ]
   }
@@ -140,19 +137,7 @@ function updateDisplay() {
     // Add annotations
     const makeAnnotations = d3.annotation()
       .type(d3.annotationLabel)
-      .annotations(scene.annotations)
-      .accessors({
-        x: d => xScale(d.x),
-        y: d => yScale(d.y)
-      })
-      .accessorsInverse({
-        x: d => xScale.invert(d.x),
-        y: d => yScale.invert(d.y)
-      })
-      .accessorsScaled({
-        x: xScale,
-        y: yScale
-      });
+      .annotations(scene.annotations);
 
     svg.append("g")
       .attr("class", "annotation-group")
