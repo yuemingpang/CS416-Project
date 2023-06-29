@@ -136,6 +136,27 @@ function updateDisplay() {
     svg.append('g')
       .attr('transform', "translate(" + margin.left + "," + (margin.top + height) + ")")
       .call(xAxis);
+
+    // Add annotations
+    const makeAnnotations = d3.annotation()
+      .type(d3.annotationLabel)
+      .annotations(scene.annotations)
+      .accessors({
+        x: d => xScale(d.x),
+        y: d => yScale(d.y)
+      })
+      .accessorsInverse({
+        x: d => xScale.invert(d.x),
+        y: d => yScale.invert(d.y)
+      })
+      .accessorsScaled({
+        x: xScale,
+        y: yScale
+      });
+
+    svg.append("g")
+      .attr("class", "annotation-group")
+      .call(makeAnnotations);
   }
 
   drawChart();
