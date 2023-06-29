@@ -15,16 +15,6 @@ body {
   text-align: center;
 }
 
-#tooltip {
-  position: absolute;
-  pointer-events: none;
-  background-color: white;
-  padding: 8px;
-  border: 1px solid black;
-  font-size: 12px;
-  opacity: 0;
-}
-
 h2 {
   margin-top: 0;
   color: #333;
@@ -33,6 +23,16 @@ h2 {
 p {
   color: #777;
   line-height: 1.5;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  pointer-events: none;
 }
 
 .button-container {
