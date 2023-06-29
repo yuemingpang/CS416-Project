@@ -60,8 +60,8 @@ svg {
   height: 300px;
 }
 
-circle {
-  fill: lightblue;
-  stroke: black;
+rect {
+  fill: lightblue; 
+  stroke: black; 
 }
 
