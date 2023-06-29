@@ -77,6 +77,10 @@ function updateDisplay() {
     .append("p")
     .text(scene.description);
 
+  container
+    .append("p")
+    .text(scene.annotations);
+
   // Add the chart
   const svg = container
     .append("svg")
