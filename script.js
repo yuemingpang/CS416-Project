@@ -96,8 +96,9 @@ function updateDisplay() {
 
   // Function to show the tooltip
   function showTooltip(d) {
-    const tooltip = container.append("div")
+    var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
+      .style("opacity", 0.8)
       .style("top", (d3.event.pageY + 10) + "px")
       .style("left", (d3.event.pageX + 10) + "px")
       .html(`Make: ${d.Make}<br>Fuel: ${d.Fuel}<br>EngineCylinders: ${d.EngineCylinders}<br>AverageCityMPG: ${d.AverageCityMPG}<br>AverageHighwayMPG: ${d.AverageHighwayMPG}`);
