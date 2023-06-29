@@ -73,11 +73,8 @@ function updateDisplay() {
       .attr('cx', function (d) { return xScale(+d.AverageCityMPG); })
       .attr('cy', function (d) { return yScale(+d.AverageHighwayMPG); })
       .attr('r', function (d) { return 2 + +d.EngineCylinders; })
-      .on("mouseover", function (d) {
-        // Show tooltip after 3 seconds
-        setTimeout(() => {
-          showTooltip(d);
-        }, 3000);
+      .on("mouseover", function (event, d) {
+        showTooltip(event.pageX, event.pageY, d);
       })
       .on("mouseout", function () {
         hideTooltip();
@@ -94,20 +91,28 @@ function updateDisplay() {
 
   drawChart();
 
-  // Function to show the tooltip
-  function showTooltip(d) {
-    var tooltip = container.append("div")
+  // Tooltip functions
+  function showTooltip(x, y, data) {
+    const tooltip = d3.select("body")
+      .append("div")
       .attr("class", "tooltip")
-      .style("opacity", 0.8)
-      .style("top", (d3.event.pageY + 10) + "px")
-      .style("left", (d3.event.pageX + 10) + "px")
-      .html(`Make: ${d.Make}<br>Fuel: ${d.Fuel}<br>EngineCylinders: ${d.EngineCylinders}<br>AverageCityMPG: ${d.AverageCityMPG}<br>AverageHighwayMPG: ${d.AverageHighwayMPG}`);
+      .style("left", x + "px")
+      .style("top", y + "px");
+
+    tooltip.append("p")
+      .text("Fuel: " + data.Fuel);
+    tooltip.append("p")
+      .text("Average City MPG: " + data.AverageCityMPG);
+    tooltip.append("p")
+      .text("Average Highway MPG: " + data.AverageHighwayMPG);
+    tooltip.append("p")
+      .text("Engine Cylinders: " + data.EngineCylinders);
   }
 
-  // Function to hide the tooltip
   function hideTooltip() {
     d3.select(".tooltip").remove();
   }
+  
 
   // Add triggers to change the current scene
   const buttonContainer = container
