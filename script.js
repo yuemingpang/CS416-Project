@@ -77,9 +77,11 @@ function updateDisplay() {
     .append("p")
     .text(scene.description);
 
-  container
-    .append("p")
-    .text(scene.annotations);
+  // Add tooltip
+  const tooltip = d3.select("body")
+    .append("div")
+    .attr("id", "tooltip")
+    .style("opacity", 0);
 
   // Add the chart
   const svg = container
@@ -87,7 +89,7 @@ function updateDisplay() {
     .attr("width", "100%")
     .attr("height", "300px");
 
-  // Your chart code goes here
+  //Chart code
   async function drawChart() {
     const data = await d3.csv("https://flunky.github.io/cars2017.csv");
     const width = 200;
