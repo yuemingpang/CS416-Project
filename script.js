@@ -74,10 +74,10 @@ function updateDisplay() {
       .attr('cy', function (d) { return yScale(+d.AverageHighwayMPG); })
       .attr('r', function (d) { return 2 + +d.EngineCylinders; })
       .on("mouseover", function (d) {
-        // Show tooltip after 5 seconds
+        // Show tooltip after 3 seconds
         setTimeout(() => {
           showTooltip(d);
-        }, 5000);
+        }, 3000);
       })
       .on("mouseout", function () {
         hideTooltip();
@@ -96,7 +96,7 @@ function updateDisplay() {
 
   // Function to show the tooltip
   function showTooltip(d) {
-    var tooltip = d3.select("body").append("div")
+    var tooltip = container.append("div")
       .attr("class", "tooltip")
       .style("opacity", 0.8)
       .style("top", (d3.event.pageY + 10) + "px")
