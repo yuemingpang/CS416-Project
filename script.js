@@ -122,7 +122,7 @@ function updateDisplay() {
           .style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY + "px")
           .style("opacity", 1)
-          .html(`Make: ${d.Make}<br>Model: ${d.Model}<br>Year: ${d.Year}`);
+          .html(`Make: ${d.Make}<br>Fuel: ${d.Fuel}<br>EngineCylinders: ${d.EngineCylinders}<br>AverageCityMPG: ${d.AverageCityMPG}<br>AverageHighwayMPG: ${d.AverageHighwayMPG}`);
       })
       .on("mouseout", function () {
         const tooltip = d3.select("#tooltip");
