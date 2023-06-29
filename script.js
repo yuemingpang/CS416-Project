@@ -6,17 +6,56 @@ const scenes = [
   {
     title: "Scene 1",
     description: "This is the first scene.",
-    // Add other scene-specific properties
+    annotations: [
+      {
+        note: {
+          label: "Annotation 1",
+          title: "Title 1",
+          align: "middle",
+          wrap: 200
+        },
+        x: 100,
+        y: 100,
+        dx: -50,
+        dy: -50
+      }
+    ]
   },
   {
     title: "Scene 2",
     description: "This is the second scene.",
-    // Add other scene-specific properties
+    annotations: [
+      {
+        note: {
+          label: "Annotation 2",
+          title: "Title 2",
+          align: "middle",
+          wrap: 200
+        },
+        x: 200,
+        y: 200,
+        dx: -50,
+        dy: -50
+      }
+    ]
   },
   {
     title: "Scene 3",
     description: "This is the third scene.",
-    // Add other scene-specific properties
+    annotations: [
+      {
+        note: {
+          label: "Annotation 3",
+          title: "Title 3",
+          align: "middle",
+          wrap: 200
+        },
+        x: 250,
+        y: 250,
+        dx: -50,
+        dy: -50
+      }
+    ]
   }
 ];
 
@@ -75,7 +114,20 @@ function updateDisplay() {
       .append('circle')
       .attr('cx', function (d) { return xScale(+d.AverageCityMPG); })
       .attr('cy', function (d) { return yScale(+d.AverageHighwayMPG); })
-      .attr('r', function (d) { return 2 + +d.EngineCylinders; });
+      .attr('r', function (d) { return 2 + +d.EngineCylinders; })
+      .on("mouseover", function (d) {
+        const tooltip = d3.select("#tooltip");
+
+        tooltip
+          .style("left", d3.event.pageX + "px")
+          .style("top", d3.event.pageY + "px")
+          .style("opacity", 1)
+          .html(`Make: ${d.Make}<br>Model: ${d.Model}<br>Year: ${d.Year}`);
+      })
+      .on("mouseout", function () {
+        const tooltip = d3.select("#tooltip");
+        tooltip.style("opacity", 0);
+      });
 
     svg.append('g')
       .attr('transform', "translate(" + margin.left + "," + margin.top + ")")
