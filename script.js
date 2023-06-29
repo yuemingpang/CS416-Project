@@ -5,54 +5,15 @@ let currentScene = 0;
 const scenes = [
   {
     title: "Scene 1",
-    description: "This is the first scene.",
-    annotations: [
-      {
-        note: {
-          label: "Annotation 1",
-          title: "Title 1",
-          align: "middle"
-        },
-        x: 50,
-        y: 50,
-        dx: 100,
-        dy: 100
-      }
-    ]
+    description: "This is the first scene."
   },
   {
     title: "Scene 2",
-    description: "This is the second scene.",
-    annotations: [
-      {
-        note: {
-          label: "Annotation 2",
-          title: "Title 2",
-          align: "middle"
-        },
-        x: 200,
-        y: 200,
-        dx: 50,
-        dy: 50
-      }
-    ]
+    description: "This is the second scene."
   },
   {
     title: "Scene 3",
-    description: "This is the third scene.",
-    annotations: [
-      {
-        note: {
-          label: "Annotation 3",
-          title: "Title 3",
-          align: "middle"
-        },
-        x: 200,
-        y: 200,
-        dx: 50,
-        dy: 50
-      }
-    ]
+    description: "This is the third scene."
   }
 ];
 
@@ -133,15 +94,6 @@ function updateDisplay() {
     svg.append('g')
       .attr('transform', "translate(" + margin.left + "," + (margin.top + height) + ")")
       .call(xAxis);
-
-    // Add annotations
-    const makeAnnotations = d3.annotation()
-      .type(d3.annotationLabel)
-      .annotations(scene.annotations);
-
-    svg.append("g")
-      .attr("class", "annotation-group")
-      .call(makeAnnotations);
   }
 
   drawChart();
