@@ -100,6 +100,8 @@ function updateDisplay() {
       .style("top", y + "px");
 
     tooltip.append("p")
+      .text("Make: " + data.Make);
+    tooltip.append("p")
       .text("Fuel: " + data.Fuel);
     tooltip.append("p")
       .text("Average City MPG: " + data.AverageCityMPG);
