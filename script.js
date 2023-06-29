@@ -74,17 +74,13 @@ function updateDisplay() {
       .attr('cy', function (d) { return yScale(+d.AverageHighwayMPG); })
       .attr('r', function (d) { return 2 + +d.EngineCylinders; })
       .on("mouseover", function (d) {
-        const tooltip = d3.select("#tooltip");
-
-        tooltip
-          .style("left", d3.event.pageX + "px")
-          .style("top", d3.event.pageY + "px")
-          .style("opacity", 1)
-          .html(`Make: ${d.Make}<br>Fuel: ${d.Fuel}<br>EngineCylinders: ${d.EngineCylinders}<br>AverageCityMPG: ${d.AverageCityMPG}<br>AverageHighwayMPG: ${d.AverageHighwayMPG}`);
+        // Show tooltip after 5 seconds
+        setTimeout(() => {
+          showTooltip(d);
+        }, 5000);
       })
       .on("mouseout", function () {
-        const tooltip = d3.select("#tooltip");
-        tooltip.style("opacity", 0);
+        hideTooltip();
       });
 
     svg.append('g')
@@ -97,6 +93,20 @@ function updateDisplay() {
   }
 
   drawChart();
+
+  // Function to show the tooltip
+  function showTooltip(d) {
+    const tooltip = container.append("div")
+      .attr("class", "tooltip")
+      .style("top", (d3.event.pageY + 10) + "px")
+      .style("left", (d3.event.pageX + 10) + "px")
+      .html(`Make: ${d.Make}<br>Fuel: ${d.Fuel}<br>EngineCylinders: ${d.EngineCylinders}<br>AverageCityMPG: ${d.AverageCityMPG}<br>AverageHighwayMPG: ${d.AverageHighwayMPG}`);
+  }
+
+  // Function to hide the tooltip
+  function hideTooltip() {
+    d3.select(".tooltip").remove();
+  }
 
   // Add triggers to change the current scene
   const buttonContainer = container
