@@ -78,6 +78,9 @@ function updateDisplay() {
     .attr("width", "100%")
     .attr("height", "300px");
 
+  // Remove existing annotation group
+  svg.select(".annotation-group").remove();
+
   //Chart code
   async function drawChart() {
     const data = await d3.csv("https://flunky.github.io/cars2017.csv");
