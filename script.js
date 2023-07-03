@@ -5,7 +5,7 @@ let currentScene = 0;
 const scenes = [
   {
     title: "Scene 1",
-    description: "Explore the regualr sedan",
+    description: "Explore the regular sedan",
     annotations: [
       {
         note: {
