@@ -36,8 +36,8 @@ const annotations = [
     },
     x: 100,
     y: 100,
-    dy: -50,
-    dx: -50
+    dy: 200,
+    dx: 200
   },
   {
     note: {
@@ -46,8 +46,8 @@ const annotations = [
     },
     x: 150,
     y: 150,
-    dy: -50,
-    dx: 0
+    dy: 200,
+    dx: 200
   },
 ];
 
