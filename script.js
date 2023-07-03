@@ -5,15 +5,15 @@ let currentScene = 0;
 const scenes = [
   {
     title: "Scene 1",
-    description: "This is the first scene."
+    description: "This is the first scene.",
   },
   {
     title: "Scene 2",
-    description: "This is the second scene."
+    description: "This is the second scene.",
   },
   {
     title: "Scene 3",
-    description: "This is the third scene."
+    description: "This is the third scene.",
   },
 ];
 
