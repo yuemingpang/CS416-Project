@@ -75,7 +75,7 @@ function updateDisplay() {
   // Add the chart
   const svg = container
     .append("svg")
-    .attr("width", "300px")
+    .attr("width", "100%")
     .attr("height", "300px");
 
   // Remove existing annotation group
