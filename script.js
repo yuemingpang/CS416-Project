@@ -75,7 +75,7 @@ function updateDisplay() {
   // Add the chart
   const svg = container
     .append("svg")
-    .attr("width", "100%")
+    .attr("width", "300px")
     .attr("height", "300px");
 
   // Remove existing annotation group
@@ -86,7 +86,7 @@ function updateDisplay() {
     const data = await d3.csv("https://flunky.github.io/cars2017.csv");
     const width = 200;
     const height = 200;
-    const margin = { top: 50, left: 300 };
+    const margin = { top: 50, left: 50 };
 
     const xScale = d3.scaleLog()
       .domain([10, 150])
