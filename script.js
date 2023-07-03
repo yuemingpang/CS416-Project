@@ -28,10 +28,10 @@ const scenes = [
           label: "Super car has high fuel consumption",
           title: "Note 2"
         },
-        x: 30,
+        x: 10,
         y: 160,
-        dx: 80,
-        dy: 10
+        dx: 90,
+        dy: -55
       },
     ]
   },
