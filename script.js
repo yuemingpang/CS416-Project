@@ -13,9 +13,9 @@ const scenes = [
           title: "Title 1"
         },
         x: 100,
-        y: 100,
-        dx: -100,
-        dy: -100
+        y: 120,
+        dx: -50,
+        dy: -50
       },
     ]
   },
@@ -128,10 +128,6 @@ function updateDisplay() {
     // Add annotations
     const makeAnnotations = d3.annotation()
       .type(d3.annotationLabel)
-      .accessors({
-        x: d => xScale(d.AverageCityMPG),
-        y: d => yScale(d.AverageHighwayMPG)
-      })
       .annotations(scene.annotations);
 
     svg.append("g")
