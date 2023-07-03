@@ -13,7 +13,7 @@ const scenes = [
           title: "Title 1"
         },
         x: 100,
-        y: 120,
+        y: 100,
         dx: -50,
         dy: -50
       },
@@ -25,8 +25,8 @@ const scenes = [
     annotations: [
       {
         note: {
-          label: "Annotation 1",
-          title: "Title 1"
+          label: "Annotation 2",
+          title: "Title 2"
         },
         x: 100,
         y: 100,
@@ -41,8 +41,8 @@ const scenes = [
     annotations: [
       {
         note: {
-          label: "Annotation 1",
-          title: "Title 1"
+          label: "Annotation 3",
+          title: "Title 3"
         },
         x: 100,
         y: 100,
