@@ -65,3 +65,16 @@ circle {
   stroke: black;
 }
 
+  .annotation-group {
+    font-family: Arial, sans-serif;
+  }
+
+  .annotation-note-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .annotation-note-label {
+    margin-bottom: 10px;
+  }
+
