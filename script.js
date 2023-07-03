@@ -24,8 +24,8 @@ const annotations = [
       label: "This is an annotation for Scene 1",
       title: "Annotation Title"
     },
-    x: 50,
-    y: 50,
+    x: 90,
+    y: 90,
     dy: 100,
     dx: 100
   },
@@ -36,8 +36,8 @@ const annotations = [
     },
     x: 100,
     y: 100,
-    dy: 200,
-    dx: 200
+    dy: 90,
+    dx: 90
   },
   {
     note: {
