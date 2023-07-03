@@ -14,8 +14,8 @@ const scenes = [
         },
         x: 100,
         y: 100,
-        dx: -75,
-        dy: -70
+        dx: -25,
+        dy: -50
       },
     ]
   },
@@ -28,10 +28,10 @@ const scenes = [
           label: "Super car has high fuel consumption",
           title: "Note 2"
         },
-        x: 50,
-        y: 150,
-        dx: 20,
-        dy: 5
+        x: 30,
+        y: 160,
+        dx: 58,
+        dy: -20
       },
     ]
   },
@@ -44,7 +44,7 @@ const scenes = [
           label: "Electric car has very high fuel economy",
           title: "Note 3"
         },
-        x: 150,
+        x: 165,
         y: 50,
         dx: 20,
         dy: 20
