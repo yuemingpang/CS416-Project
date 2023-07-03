@@ -12,10 +12,10 @@ const scenes = [
           label: "Annotation 1",
           title: "Title 1"
         },
-        x: 150,
-        y: 150,
-        dx: -50,
-        dy: -50
+        x: 100,
+        y: 100,
+        dx: 50,
+        dy: 50
       },
     ]
   },
