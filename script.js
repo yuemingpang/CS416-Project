@@ -14,8 +14,8 @@ const scenes = [
         },
         x: 100,
         y: 100,
-        dx: -50,
-        dy: -50
+        dx: 200,
+        dy: 200
       },
     ]
   },
@@ -76,7 +76,7 @@ function updateDisplay() {
   const svg = container
     .append("svg")
     .attr("width", "100%")
-    .attr("height", "500px");
+    .attr("height", "300px");
 
   //Chart code
   async function drawChart() {
