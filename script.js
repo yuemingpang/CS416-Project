@@ -127,7 +127,7 @@ function updateDisplay() {
     // Add annotations
     const makeAnnotations = d3.annotation()
       .type(d3.annotationLabel)
-      .annotations(scene[currentScene].annotations);
+      .annotations(scene.annotations);
 
     svg.append("g")
       .attr("class", ""annotation-group"")
