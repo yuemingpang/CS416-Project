@@ -12,8 +12,8 @@ const scenes = [
           label: "Annotation 1",
           title: "Title 1"
         },
-        x: 150,
-        y: 150,
+        x: 50,
+        y: 50,
         dx: 100,
         dy: 100
       },
@@ -76,8 +76,7 @@ function updateDisplay() {
   const svg = container
     .append("svg")
     .attr("width", "100%")
-    .attr("height", "300px")
-    .attr('transform', 'translate(200,50)');
+    .attr("height", "300px");
 
   // Remove existing annotation group
   svg.select(".annotation-group").remove();
@@ -87,7 +86,7 @@ function updateDisplay() {
     const data = await d3.csv("https://flunky.github.io/cars2017.csv");
     const width = 200;
     const height = 200;
-    const margin = { top: 50, left: 200 };
+    const margin = { top: 50, left: 50 };
 
     const xScale = d3.scaleLog()
       .domain([10, 150])
