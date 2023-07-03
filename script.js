@@ -5,49 +5,49 @@ let currentScene = 0;
 const scenes = [
   {
     title: "Scene 1",
-    description: "This is the first scene.",
+    description: "Explore the regualr sedan",
     annotations: [
       {
         note: {
-          label: "Annotation 1",
-          title: "Title 1"
+          label: "The regular sedan has median fuel consumption",
+          title: "Note 1"
         },
         x: 100,
         y: 100,
-        dx: -50,
-        dy: -50
+        dx: -75,
+        dy: -70
       },
     ]
   },
   {
     title: "Scene 2",
-    description: "This is the second scene.",
+    description: "Explore the super car",
     annotations: [
       {
         note: {
-          label: "Annotation 2",
-          title: "Title 2"
+          label: "Super car has high fuel consumption",
+          title: "Note 2"
         },
-        x: 100,
-        y: 100,
-        dx: -50,
-        dy: -50
+        x: 50,
+        y: 150,
+        dx: 20,
+        dy: 5
       },
     ]
   },
   {
     title: "Scene 3",
-    description: "This is the third scene.",
+    description: "Explore the electric car",
     annotations: [
       {
         note: {
-          label: "Annotation 3",
-          title: "Title 3"
+          label: "Electric car has very high fuel economy",
+          title: "Note 3"
         },
-        x: 100,
-        y: 100,
-        dx: -50,
-        dy: -50
+        x: 150,
+        y: 50,
+        dx: 20,
+        dy: 20
       },
     ]
   }
@@ -86,7 +86,7 @@ function updateDisplay() {
     const data = await d3.csv("https://flunky.github.io/cars2017.csv");
     const width = 200;
     const height = 200;
-    const margin = { top: 50, left: 250 };
+    const margin = { top: 100, left: 250 };
 
     const xScale = d3.scaleLog()
       .domain([10, 150])
@@ -134,7 +134,7 @@ function updateDisplay() {
       .annotations(scene.annotations);
 
     svg.append("g")
-      .attr('transform', "translate(250,50)")
+      .attr('transform', "translate(250,100)")
       .attr("class", "annotation-group")
       .call(makeAnnotations);
   }
