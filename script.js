@@ -17,6 +17,51 @@ const scenes = [
   },
 ];
 
+//Define annotations
+const annotations = [
+  {
+    note: {
+      label: "This is an annotation for Scene 1",
+      title: "Annotation Title"
+    },
+    x: 50,
+    y: 50,
+    dy: 100,
+    dx: 100
+  },
+  {
+    note: {
+      label: "This is an annotation for Scene 2",
+      title: "Annotation Title"
+    },
+    x: 100,
+    y: 100,
+    dy: -50,
+    dx: -50
+  },
+  {
+    note: {
+      label: "This is an annotation for Scene 3",
+      title: "Annotation Title"
+    },
+    x: 150,
+    y: 150,
+    dy: -50,
+    dx: 0
+  },
+];
+
+// Function to add annotations to the chart
+function addAnnotations(svg, annotations) {
+  const makeAnnotations = d3.annotation()
+    .type(d3.annotationLabel)
+    .annotations(annotations);
+
+  svg.append("g")
+    .attr("class", "annotation-group")
+    .call(makeAnnotations);
+}
+
 // Function to update the display based on the current scene
 function updateDisplay() {
   const scene = scenes[currentScene];
@@ -91,6 +136,19 @@ function updateDisplay() {
 
   drawChart();
 
+  //add annotations
+  switch (currentScene) {
+    case 0:
+      addAnnotations(svg, annotations[0]);
+      break;
+    case 1:
+      addAnnotations(svg, annotations[1]);
+      break;
+    case 2:
+      addAnnotations(svg, annotations[2]);
+      break;
+  }
+  
   // Tooltip functions
   function showTooltip(x, y, data) {
     const tooltip = d3.select("body")
