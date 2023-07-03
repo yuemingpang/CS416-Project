@@ -28,8 +28,8 @@ const scenes = [
           label: "Annotation 1",
           title: "Title 1"
         },
-        x: 150,
-        y: 150,
+        x: 100,
+        y: 100,
         dx: -50,
         dy: -50
       },
@@ -44,8 +44,8 @@ const scenes = [
           label: "Annotation 1",
           title: "Title 1"
         },
-        x: 200,
-        y: 200,
+        x: 100,
+        y: 100,
         dx: -50,
         dy: -50
       },
@@ -76,7 +76,7 @@ function updateDisplay() {
   const svg = container
     .append("svg")
     .attr("width", "100%")
-    .attr("height", "300px");
+    .attr("height", "500px");
 
   //Chart code
   async function drawChart() {
